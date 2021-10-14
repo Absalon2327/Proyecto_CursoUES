@@ -18,29 +18,40 @@
                 <a href="../home/?modulo=HOME" class="waves-effect"><i class="mdi mdi-home"></i><span> Home </span></a>
             </li>
 
+            <li class="has_sub">
+                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-cart-plus"></i><span> Compras <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                <ul class="list-unstyled">                    
+                    <li><a href="../productos/?modulo=COMPRAS">Nueva</a></li>
+                    
+                </ul>
+            </li>
             
 
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Productos <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                <ul class="list-unstyled">
-                    <li><a href="email-inbox.php">Nuevo Producto</a></li>
-                    <li><a href="email-read.php">Administrar Producto</a></li>
+                <ul class="list-unstyled">                    
+                    <li><a href="../productos/?modulo=INVENTARIO">Inventario</a></li>
                     
                 </ul>
             </li>
 
-             <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Productores <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+            <li class="has_sub">
+                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i><span> Proveedores <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="email-inbox.php">Nuevo Productor</a></li>
-                    <li><a href="email-read.php">Produccion</a></li>
-                    
+                    <li><a href="../productos/?modulo=PROVEEDORES">Módulo</a></li>                    
+                </ul>
+            </li>
+
+            <li class="has_sub">
+                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-view-list"></i><span> Categorías <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                <ul class="list-unstyled">
+                    <li><a href="../productos/?modulo=CATEGORIAS">Módulo</a></li>                    
                 </ul>
             </li>
 
 
             <li>
-                <a href="../usuarios/?modulo=USUARIOS" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Usuarios </span></a>
+                <a href="../usuarios/?modulo=USUARIOS" class="waves-effect"><i class="ion-person"></i><span> Usuarios </span></a>
             </li>
 
              
