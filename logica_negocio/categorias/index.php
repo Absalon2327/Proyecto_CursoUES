@@ -95,15 +95,24 @@
                         <form name="formulario_registro" id="formulario_registro">
                             <input type="hidden" id="ingreso_datos" name="ingreso_datos" value="si_registro">
                             <input type="hidden" id="llave_categoria" name="llave_categoria" value="si_registro">
-                            <input type="hidden" id="estado_categoria" name="estado_categoria" value="activo">
+                            <input type="hidden" id="est_categoria" name="est_categoria" value="activo">
                                 <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label>Nombre</label>
                                         <input type="text" autocomplete="off" name="nombre_cate" data-parsley-required-message="El nombre es requerido" id="nombre_cate" class="form-control" required placeholder="Calzado"/>
                                       </div>
-                                    </div>   
-                    
+                                    </div>
+                                     <div class="col-md-6">
+                                      <div class="form-group hidden">
+                                        <label class="control-label">Estado</label>
+                                        <select id="estado_cat"  name="estado_cat" class="form-control select2" disabled="true">
+                                            <option>Seleccione</option>
+                                            <option value="activo" selected>Activo</option>
+                                            <option value="inactivo">Inactivo</option>
+                                        </select>               
+                                      </div>
+                                    </div> 
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -23,8 +23,8 @@ $(function (){
 
 	$(document).on("click",".btn_eliminar",function(e){
 		e.preventDefault();
-		var id = $(this).attr("data-id");
-		var datos = {"eliminar_persona":"si_eliminala","id":id}
+		var id = $(this).attr("data-idcat");
+		var datos = {"eliminar_categoria":"si_eliminala","id":id}
 		$.ajax({
 	        dataType: "json",
 	        method: "POST",
@@ -38,9 +38,9 @@ $(function (){
 	$(document).on("click",".btn_editar",function(e){
 
 		e.preventDefault(); 
-		var id = $(this).attr("data-id");
+		var id = $(this).attr("data-idcat");
 		console.log("El id es: ",id);
-		var datos = {"consultar_info":"si_condui_especifico","id":id}
+		var datos = {"consultar_info":"si_este_id","id":id}
 		$.ajax({
 	        dataType: "json",
 	        method: "POST",
@@ -49,23 +49,12 @@ $(function (){
 	    }).done(function(json) {
 	    	console.log("EL consultar especifico",json);
 	    	if (json[0]=="Exito") {
-	    		var fecHA_string = json[2]['fecha_nacimiento'];
-				var porciones = fecHA_string.split('-');
-				var fecha = porciones[2]+"/"+porciones[1]+"/"+porciones[0]
-
-	    		$('#llave_persona').val(id);
-	    		$('#ingreso_datos').val("si_actualizalo");
-	    		$('#nombre').val(json[2]['nombre']);
-	    		$('#email').val(json[2]['email']);
-	    		$('#dui').val(json[2]['dui']);
-	    		$('#telefono').val(json[2]['telefono']);
-	    		$('#fecha').val(fecha);
-	    		$('#tipo_persona').val(json[2]['tipo_persona']);
-
-	    		$("#usuario").removeAttr("required");
-	    		$("#contrasenia").removeAttr("required");
 	    		
-				
+	    		$('#llave_categoria').val(id);
+	    		$('#ingreso_datos').val("si_actualizalo");
+	    		$('#nombre_cate').val(json[2]['nombre_categoria']);	    		
+	    		$('#estado_cat').val(json[2]['estado_categoria']); 
+				$("#estado_cat").prop("disabled", false);
 	    		$('#md_registrar_categoria').modal('show');
 	    	}
 	    	 
@@ -84,9 +73,9 @@ $(function (){
 		e.preventDefault();
 		console.log("Capturando evento");
 		//$('#myModal').modal('show'); para abrir modal
-		//$('#myModal').modal('hide'); para cerrar modal
+		//$('#myModal').modal('hide'); para cerrar modal		
 		$('#md_registrar_categoria').modal('show');
-
+		$("#estado_cat").addClass("hidden");
 		$(".select2").select2({
 	    }).on("select2:opening", 
 	        function(){
@@ -128,14 +117,13 @@ function cargar_datos(){
 	$.ajax({
         dataType: "json",
         method: "POST",
-        url:'json_productos.php',
+        url:'json_categorias.php',
         data : datos,
     }).done(function(json) {
     	console.log("EL consultar",json);
     	$("#datos_tabla").empty().html(json[1]);
-    	$("#cantidad_usuarios").empty().html(json[2]);
-    	$('#tabla_usuarios').DataTable();
-    	$('#md_registrar_usuario').modal('hide');
+    	$('#tabla_categorias').DataTable();
+    	$('#md_registrar_categoria').modal('hide');
     }).fail(function(){
 
     }).always(function(){

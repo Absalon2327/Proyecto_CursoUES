@@ -8,7 +8,7 @@
 <?php include '../../layouts/headerStyle.php'; ?>
 <style>
     
-    div#registrar_producto {
+    div#registrar_proveedor {
         cursor: pointer;
     }
     .error_modificado li.parsley-required {
@@ -47,14 +47,14 @@
                                 <div class="mini-stat clearfix bg-white">
                                     <span class="mini-stat-icon bg-purple mr-0 float-right"><i class="mdi mdi-cake"></i></span>
                                     <div class="mini-stat-info">
-                                        <span class="counter text-purple" id="cantidad_usuarios">25140</span>
+                                        <span class="counter text-purple" id="cantidad_proveedor">25140</span>
                                         Productos registrados
                                     </div>
                                     <div class="clearfix"></div>
                                      
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-6" id="registrar_producto">
+                            <div class="col-md-6 col-xl-6" id="registrar_proveedor">
                                 <div class="mini-stat clearfix bg-white">
                                     <span class="mini-stat-icon bg-blue-grey mr-0 float-right"><i class="mdi mdi-account-multiple-plus"></i></span>
                                     <div class="mini-stat-info">
@@ -93,7 +93,7 @@
 
             <!-- aca las modales-->
    
-            <div class="modal fade" id="md_registrar_producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="md_registrar_proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -106,12 +106,12 @@
                       
                         <form name="formulario_registro" id="formulario_registro">
                             <input type="hidden" id="ingreso_datos" name="ingreso_datos" value="si_registro">
-                            <input type="hidden" id="llave_producto" name="llave_producto" value="si_registro">
+                            <input type="hidden" id="llave_proveedor" name="llave_proveedor" value="si_registro">
                                 <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label>Nombre Producto</label>
-                                        <input type="text" autocomplete="off" name="nombre_pro" data-parsley-required-message="El nombre es requerido" id="nombre" class="form-control" required placeholder="Canasta"/>
+                                        <input type="text" autocomplete="off" name="nombre_prov" data-parsley-required-message="El nombre es requerido" id="nombre" class="form-control" required placeholder="Canasta"/>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
