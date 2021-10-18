@@ -174,7 +174,8 @@
     <script type="text/javascript" src="../../public/plugins/parsleyjs/parsley.min.js"></script>
     <script src="../../public/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
-      <script src="../../public/plugins/dropzone/dist/dropzone.js"></script>
+    <script src="../../public/plugins/dropzone/dist/dropzone.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="funciones_categorias.js" type="text/javascript" charset="utf-8"></script>
 </body>

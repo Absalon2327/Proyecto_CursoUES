@@ -10,10 +10,10 @@
         <meta content="Themesbrand" name="author" />
         <link rel="shortcut icon" href="public/assets/images/favicon.ico">
 
-        <link href="public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="public/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
-        <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="public/assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../public/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+        <link href="../public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="../public/assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>

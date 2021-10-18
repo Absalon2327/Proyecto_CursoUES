@@ -28,6 +28,41 @@
 		}
 
 
+	}else if (isset($_POST['validar_nuevo_pass']) && $_POST['validar_nuevo_pass']=="si_actualizalo") {
+
+		$array_update = array(
+            "table" => "tb_usuario",
+            "id_persona" => $_POST['id_persona'],
+            "contrasena"=>$modelo->encriptarlas_contrasenas($_POST['contrasena']),
+             
+        );
+		$resultado = $modelo->actualizar_generica($array_update);
+
+		if($resultado[0]=='1' && $resultado[4]>0){
+        	print json_encode(array("Exito",$_POST,$resultado));
+			exit();
+
+        }else {
+        	print json_encode(array("Error",$_POST,$resultado));
+			exit();
+        }
+
+
+
+	}else if (isset($_POST['validar_dui']) && $_POST['validar_dui']=="si_validalo") {
+
+		$resultado = $modelo->get_todos("tb_persona","WHERE dui='".$_POST['dui']."'");
+		if($resultado[0]=='1' && $resultado[4]>0){
+        	print json_encode(array("Exito",$_POST,$resultado[2][0]['id'],$resultado,$resultado[2][0]));
+			exit();
+
+        }else {
+        	print json_encode(array("Error",$_POST,$resultado));
+			exit();
+        }
+
+
+
 	}else if (isset($_POST['iniciar_sesion']) && $_POST['iniciar_sesion']=="si_nueva") {
 		
 

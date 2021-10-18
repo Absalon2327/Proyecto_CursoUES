@@ -154,7 +154,7 @@
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="control-label">Estado</label>
-                                        <select id="estado_prov" name="estado_prov" class="form-control select2" disabled="true">
+                                        <select id="est_prov" name="est_prov" class="form-control select2" disabled="true">
                                             <option selected>Seleccione</option>
                                             <option value="activo">Activo</option>
                                             <option value="inactivo">Inactivo</option>

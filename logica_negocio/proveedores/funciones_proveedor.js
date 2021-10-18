@@ -58,8 +58,8 @@ $(function (){
 	    		$('#direc_prov').val(json[2]['direccion_proveedor']);
 	    		$('#telefono_prov').val(json[2]['telefono_proveedor']);
 	    		$('#nacionalidad_prov').val(json[2]['nacionalidad_proveedor']);
-	    		$('#estado_prov').prop("disabled", false);
-	    		$('#estado_prov').val(json[2]['estado_proveedor']);
+	    		$('#est_prov').prop("disabled", false);
+	    		$('#est_prov').val(json[2]['estado_proveedor']);
 				
 	    		$('#md_registrar_proveedor').modal('show');
 	    	}
