@@ -103,10 +103,10 @@
                                         <input type="text" autocomplete="off" name="nombre_cate" data-parsley-required-message="El nombre es requerido" id="nombre_cate" class="form-control" required placeholder="Calzado"/>
                                       </div>
                                     </div>
-                                     <div class="col-md-6">
+                                    <div class="col-md-6">
                                       <div class="form-group hidden">
                                         <label class="control-label">Estado</label>
-                                        <select id="estado_cat"  name="estado_cat" class="form-control select2" disabled="true">
+                                        <select id="estado_cat" name="estado_cat" class="form-control select2" disabled="true">
                                             <option>Seleccione</option>
                                             <option value="activo" selected>Activo</option>
                                             <option value="inactivo">Inactivo</option>

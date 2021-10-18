@@ -48,7 +48,7 @@
                                     <span class="mini-stat-icon bg-purple mr-0 float-right"><i class="mdi mdi-cake"></i></span>
                                     <div class="mini-stat-info">
                                         <span class="counter text-purple" id="cantidad_proveedor">25140</span>
-                                        Productos registrados
+                                        Proveedores registrados
                                     </div>
                                     <div class="clearfix"></div>
                                      
@@ -59,7 +59,7 @@
                                     <span class="mini-stat-icon bg-blue-grey mr-0 float-right"><i class="mdi mdi-account-multiple-plus"></i></span>
                                     <div class="mini-stat-info">
                                         <span class="counter text-blue-grey">Registrar</span>
-                                        Nuevo Producto
+                                        Nuevo Proveedor
                                     </div>
                                     <div class="clearfix"></div>
                                      
@@ -107,60 +107,61 @@
                         <form name="formulario_registro" id="formulario_registro">
                             <input type="hidden" id="ingreso_datos" name="ingreso_datos" value="si_registro">
                             <input type="hidden" id="llave_proveedor" name="llave_proveedor" value="si_registro">
+                            <input type="hidden" id="estado_prov" name="estado_prov" value="activo">
                                 <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-group">
-                                        <label>Nombre Producto</label>
-                                        <input type="text" autocomplete="off" name="nombre_prov" data-parsley-required-message="El nombre es requerido" id="nombre" class="form-control" required placeholder="Canasta"/>
+                                        <label>Nombre</label>
+                                        <input type="text" autocomplete="off" name="nombre_prov" data-parsley-required-message="El nombre es requerido" id="nombre_prov" class="form-control" required placeholder="Floristería Xiomara"/>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-group">
-                                        <label class="control-label">Categoría</label>
-                                        <select id="categoria_pro" name="categoria_pro" class="form-control select2">
-                                             
-                                            <option value="1" >CALZADO</option>
-                                            <option value="2" selected>PLASTICOS</option>
+                                        <label>N° Registro</label>
+                                        <input type="text" data-mask="999999-9" autocomplete="off" name="num_regis_prov" data-parsley-required-message="El NRC es requerido" id="num_regis_prov" class="form-control" required placeholder="111111-1"/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>NIT</label>
+                                        <input type="text" data-mask="9999-999999-999-9" autocomplete="off" name="nit_prov" data-parsley-required-message="El NIT es requerido" id="nit_prov" class="form-control" required placeholder="0000-010100-101-3"/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Dirección</label>
+                                        <input type="text" autocomplete="off" name="direc_prov" data-parsley-required-message="La dirección es requerida" id="direc_prov" class="form-control" required placeholder="Santo Domingo"/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Teléfono</label>
+                                        <input type="text" autocomplete="off" name="telefono_prov"
+                                        data-mask="9999-9999" data-parsley-required-message="El teléfono es requerido" id="telefono_prov" class="form-control" required placeholder="7777-7777"/>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label class="control-label">Nacionalidad</label>
+                                        <select id="nacionalidad_prov" name="nacionalidad_prov" class="form-control select2">
+                                            <option selected>Seleccione</option>
+                                            <option value="Salvadoreño">Salvadoreño</option>
+                                            <option value="Extranjero">Extranjero</option>
                                         </select>               
                                       </div>
                                     </div>
-
-
                                     <div class="col-md-6">
                                       <div class="form-group">
-                                        <label>Existencia</label>
-                                        <input  type="number" name="existencia_pro" data-parsley-required-message="Campo  requerido" id="existencia_pro" maxlength="10" class="form-control" required placeholder="1"/>
+                                        <label class="control-label">Estado</label>
+                                        <select id="estado_prov" name="estado_prov" class="form-control select2" disabled="true">
+                                            <option selected>Seleccione</option>
+                                            <option value="activo">Activo</option>
+                                            <option value="inactivo">Inactivo</option>
+                                        </select>               
                                       </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                      <div class="form-group">
-                                        <label>Costo de Compra</label>
-                                        <input type="number" autocomplete="off" name="costo_compra" data-parsley-required-message="Campo  requerido" id="costo_compra" class="form-control" required placeholder="00.00"/>
-                                      </div>
-                                    </div>
-                                    <div class="col-6" style="margin-left: 25%;">
-                                        <div class="card m-b-20">
-                                            <div class="card-body">
-
-                                                <h4 class="mt-0 header-title">Añade un Foto</h4>
-                                                <p class="text-muted m-b-30 font-14">
-                                                </p>
-
-                                                <div class="m-b-30">
-                                                    <form action="#" class="dropzone">
-                                                        <div class="fallback">
-                                                            <input name="file" type="file" multiple="multiple">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                                    
-                           
-                    
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -224,6 +225,6 @@
 
       <script src="../../public/plugins/dropzone/dist/dropzone.js"></script>
 
-    <script src="funciones_productos.js" type="text/javascript" charset="utf-8"></script>
+    <script src="funciones_proveedor.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

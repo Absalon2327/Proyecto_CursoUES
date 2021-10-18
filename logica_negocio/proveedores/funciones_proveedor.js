@@ -23,12 +23,12 @@ $(function (){
 
 	$(document).on("click",".btn_eliminar",function(e){
 		e.preventDefault();
-		var id = $(this).attr("data-id");
-		var datos = {"eliminar_persona":"si_eliminala","id":id}
+		var id = $(this).attr("data-idprov");
+		var datos = {"eliminar_proveedor":"si_eliminar","id":id}
 		$.ajax({
 	        dataType: "json",
 	        method: "POST",
-	        url:'json_productos.php',
+	        url:'json_proveedor.php',
 	        data : datos,
 	    }).done(function(json) {
 	    	cargar_datos();
@@ -36,38 +36,34 @@ $(function (){
 	    });
 	});
 	$(document).on("click",".btn_editar",function(e){
-
+	
 		e.preventDefault(); 
-		var id = $(this).attr("data-id");
+		var id = $(this).attr("data-idprov");
 		console.log("El id es: ",id);
-		var datos = {"consultar_info":"si_condui_especifico","id":id}
+		var datos = {"consultar_info":"si_este_id","id":id}
 		$.ajax({
 	        dataType: "json",
 	        method: "POST",
-	        url:'json_productos.php',
+	        url:'json_proveedor.php',
 	        data : datos,
 	    }).done(function(json) {
 	    	console.log("EL consultar especifico",json);
-	    	if (json[0]=="Exito") {
-	    		var fecHA_string = json[2]['fecha_nacimiento'];
-				var porciones = fecHA_string.split('-');
-				var fecha = porciones[2]+"/"+porciones[1]+"/"+porciones[0]
 
-	    		$('#llave_persona').val(id);
+	    	if (json[0]=="Exito") {	    	
+	    		$('#llave_proveedor').val(id);
 	    		$('#ingreso_datos').val("si_actualizalo");
-	    		$('#nombre').val(json[2]['nombre']);
-	    		$('#email').val(json[2]['email']);
-	    		$('#dui').val(json[2]['dui']);
-	    		$('#telefono').val(json[2]['telefono']);
-	    		$('#fecha').val(fecha);
-	    		$('#tipo_persona').val(json[2]['tipo_persona']);
-
-	    		$("#usuario").removeAttr("required");
-	    		$("#contrasenia").removeAttr("required");
-	    		
+	    		$('#nombre_prov').val(json[2]['nombre_proveedor']);
+	    		$('#num_regis_prov').val(json[2]['nrc_proveedor']);
+	    		$('#nit_prov').val(json[2]['nit_proveedor']);
+	    		$('#direc_prov').val(json[2]['direccion_proveedor']);
+	    		$('#telefono_prov').val(json[2]['telefono_proveedor']);
+	    		$('#nacionalidad_prov').val(json[2]['nacionalidad_proveedor']);
+	    		$('#estado_prov').prop("disabled", false);
+	    		$('#estado_prov').val(json[2]['estado_proveedor']);
 				
-	    		$('#md_registrar_producto').modal('show');
+	    		$('#md_registrar_proveedor').modal('show');
 	    	}
+	    	
 	    	 
 	    }).fail(function(){
 
@@ -80,12 +76,17 @@ $(function (){
 
 
 
-	$(document).on("click","#registrar_producto",function(e){
+	$(document).on("click","#registrar_proveedor",function(e){
 		e.preventDefault();
 		console.log("Capturando evento");
 		//$('#myModal').modal('show'); para abrir modal
 		//$('#myModal').modal('hide'); para cerrar modal
-		$('#md_registrar_producto').modal('show');
+		$('#nombre_prov').val("");
+	    $('#num_regis_prov').val("");
+	    $('#nit_prov').val("");
+	    $('#direc_prov').val("");
+	    $('#telefono_prov').val("");
+		$('#md_registrar_proveedor').modal('show');
 
 		$(".select2").select2({
 	    }).on("select2:opening", 
@@ -95,6 +96,7 @@ $(function (){
 	        function(){ 
 	            $(".modal").attr("tabindex", "-1");
 	    });
+	   
     
 	});
 
@@ -107,11 +109,15 @@ $(function (){
 		$.ajax({
             dataType: "json",
             method: "POST",
-            url:'json_productos.php',
+            url:'json_proveedor.php',
             data : datos,
         }).done(function(json) {
         	console.log("EL GUARDAR",json);
-
+        		$('#nombre_prov').val("");
+	    		$('#num_regis_prov').val("");
+	    		$('#nit_prov').val("");
+	    		$('#direc_prov').val("");
+	    		$('#telefono_prov').val("");
         	cargar_datos();
         }).fail(function(){
 
@@ -128,14 +134,14 @@ function cargar_datos(){
 	$.ajax({
         dataType: "json",
         method: "POST",
-        url:'json_productos.php',
+        url:'json_proveedor.php',
         data : datos,
     }).done(function(json) {
     	console.log("EL consultar",json);
     	$("#datos_tabla").empty().html(json[1]);
-    	$("#cantidad_usuarios").empty().html(json[2]);
-    	$('#tabla_usuarios').DataTable();
-    	$('#md_registrar_usuario').modal('hide');
+    	$("#cantidad_proveedor").empty().html(json[2]);
+    	$('#tabla_proveedores').DataTable();
+    	$('#md_registrar_proveedor').modal('hide');
     }).fail(function(){
 
     }).always(function(){

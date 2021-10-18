@@ -75,7 +75,7 @@ $(function (){
 		//$('#myModal').modal('show'); para abrir modal
 		//$('#myModal').modal('hide'); para cerrar modal		
 		$('#md_registrar_categoria').modal('show');
-		$("#estado_cat").addClass("hidden");
+		
 		$(".select2").select2({
 	    }).on("select2:opening", 
 	        function(){

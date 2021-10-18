@@ -21,7 +21,7 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-cart-plus"></i><span> Compras <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">                    
-                    <li><a href="../productos/?modulo=COMPRAS">Nueva</a></li>
+                    <li><a href="../compras/?modulo=COMPRAS">Nueva</a></li>
                     
                 </ul>
             </li>
@@ -38,14 +38,14 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i><span> Proveedores <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="../productos/?modulo=PROVEEDORES">Módulo</a></li>                    
+                    <li><a href="../proveedores/?modulo=PROVEEDORES">Módulo</a></li>                    
                 </ul>
             </li>
 
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-view-list"></i><span> Categorías <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="../productos/?modulo=CATEGORIAS">Módulo</a></li>                    
+                    <li><a href="../categorias/?modulo=CATEGORIAS">Módulo</a></li>                    
                 </ul>
             </li>
 
